@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to PetFax</h1>
+    {% for pet in pets %}
+    {% if is_single  %}
+        <p>
+            <b>Did you know: </b>{{pet.pet_fact}}
+        </p>
+    {% endif %}
+        <h2>
+            <a href = "/pets/{{pet.pet_id}}">
+                {{ pet.pet_name }}
+            </a>
+        </h2>
+        <img src="{{ pet.pet_photo }}" alt = "Photo of pet" />
+    {% endfor %}
+
+    {% if is_single %}
+    <h3>
+        <a href="/pets">Go Back</a>
+    </h3>
+    {% endif %}
+
+    {% if fact_form %}
+        <h1>Submit Fax</h1>
+        <p>If you got facts, we wanna hear them!</p>
+        <form>
+            <label for="submitter">Submitter</label><br>
+            <input type="text" id="submitter" name="submitter"><br><br>
+            <label for="fun_fact">Fun Fact</label><br>
+            <textarea id="fun_fact" name="fun_fact" rows="4" cols="50"></textarea>
+        </form><br>
+        <h3>
+            <a href="/pets">Go Back</a>
+        </h3>
+    {% endif %}
+    {% if not fact_form and not is_single %}
+    <h3>
+        <a href="/facts/new">Submit Facts Here!</a>
+    </h3>
+    {% endif %}
+</body>
+</html>
