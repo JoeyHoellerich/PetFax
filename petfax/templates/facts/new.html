@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFax: New Fact</title>
+</head>
+<body>
+    <h1>Submit Fax</h1>
+    <p>If you got facts, we wanna hear them!</p>
+    <form action="/facts" method="post">
+        <label for="submitter">Submitter</label><br>
+        <input type="text" id="submitter" name="submitter"><br><br>
+        <label for="fun_fact">Fun Fact</label><br>
+        <textarea id="fun_fact" name="fun_fact" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Submit Fact!</button>
+    </form><br>
+    <h3>
+        <a href="/pets">Go Back</a>
+    </h3>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check Out This Pet!</h1>
+    {% for pet in pets %}
+        <p>
+            <b>Did you know: </b>{{pet.pet_fact}}
+        </p>
+        <h2>
+            <a href = "/pets/{{pet.pet_id}}">
+                {{ pet.pet_name }}
+            </a>
+        </h2>
+        <img src="{{ pet.pet_photo }}" alt = "Photo of pet" />
+    {% endfor %}
+
+    <h3>
+        <a href="/pets">Go Back</a>
+    </h3>
+
+</body>
+</html>
